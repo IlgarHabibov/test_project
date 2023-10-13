@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/test_graph"
+    app:startDestination="@id/welcomeFragment2">
+
+    <fragment
+        android:id="@+id/welcomeFragment2"
+        android:name="com.example.atlandroidexamples.practice9.getstarted.WelcomeFragment"
+        tools:layout="@layout/fragment_welcome" >
+
+        <action
+            android:id="@+id/action_welcomeFragment2_to_nested_flow"
+            app:destination="@id/nested_flow" >
+
+            <argument
+                android:name="coffeeId"
+                android:defaultValue="default"
+                app:argType="string"
+                app:nullable="true" />
+
+            <argument
+                android:name="coffeeName"
+                android:defaultValue="Americano"
+                app:argType="string"
+                app:nullable="true" />
+
+        </action>
+
+    </fragment>
+
+    <include app:graph="@navigation/nested_flow" />
+
+
+</navigation>

@@ -3,26 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:id="@+id/mainFrame"
-    tools:context=".activities.MainActivity"
-    >
+    tools:context=".practice9.getstarted.WelcomeFragment">
 
-    <Button
-        android:id="@+id/nextButton"
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Next"/>
-
+        android:text="Welcome"
+        android:textSize="24sp"
+        android:gravity="center"/>
 
     <Button
-        android:id="@+id/finishButton"
+        android:id="@+id/getStartedButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Finish"/>
-
-
-
+        android:text="Get started"
+        android:layout_gravity="bottom"
+        />
 
 </LinearLayout>

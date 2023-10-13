@@ -5,14 +5,68 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
     tools:ignore="HardcodedText">
 
 
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_text"/>
+        android:layout_height="match_parent"
+        android:background="@color/orange"
+        android:padding="40dp">
+
+
+        <View
+            android:visibility="gone"
+            android:id="@+id/firstView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/red"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/thirdView"
+            android:layout_marginEnd="40dp"
+            />
+
+        <View
+            android:visibility="gone"
+            android:id="@+id/secondView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/red"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@id/thirdView"
+            app:layout_constraintBottom_toTopOf="@id/thirdView"
+            android:layout_marginBottom="40dp"
+            app:layout_constraintVertical_weight="1"
+
+            />
+
+        <View
+            android:visibility="gone"
+            android:id="@+id/thirdView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/red"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/firstView"
+            app:layout_constraintTop_toBottomOf="@id/secondView"
+            app:layout_constraintVertical_weight="3"
+            />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:cornerRadius="1dp"
+            style="Filled"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 

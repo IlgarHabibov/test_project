@@ -21,4 +21,5 @@
         <item name="boxStrokeWidth">1dp</item>
         <item name="boxStrokeColor">@color/blue</item>
     </style>
+
 </resources>

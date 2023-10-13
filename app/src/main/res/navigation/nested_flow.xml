@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:id="@+id/nested_flow"
+    app:startDestination="@id/introFragment2">
+
+
+
+    <dialog
+        android:id="@+id/myDialogFragment"
+        android:name="com.example.atlandroidexamples.lesson19.MyDialogFragment"
+        tools:layout="@layout/fragment_my_dialog" />
+    <fragment
+        android:id="@+id/authFragment"
+        android:name="com.example.atlandroidexamples.practice9.auth.AuthFragment"
+        android:label="fragment_auth"
+        tools:layout="@layout/fragment_auth" />
+    <fragment
+        android:id="@+id/introFragment2"
+        android:name="com.example.atlandroidexamples.practice9.getstarted.IntroFragment"
+        tools:layout="@layout/fragment_intro">
+
+        <action
+            android:id="@+id/action_introFragment2_to_myDialogFragment"
+            app:destination="@id/myDialogFragment" />
+        <action
+            android:id="@+id/action_introFragment2_to_authFragment"
+            app:destination="@id/authFragment"
+            app:popUpTo="@id/welcomeFragment2" />
+
+        <argument
+            android:name="coffeeId"
+            android:defaultValue="default"
+            app:argType="string"
+            app:nullable="true" />
+
+        <argument
+            android:name="coffeeName"
+            android:defaultValue="Americano"
+            app:argType="string"
+            app:nullable="true" />
+
+    </fragment>
+
+</navigation>

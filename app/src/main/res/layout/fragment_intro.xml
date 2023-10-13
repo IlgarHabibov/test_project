@@ -3,26 +3,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:id="@+id/mainFrame"
-    tools:context=".activities.MainActivity"
-    >
+    tools:context=".practice9.getstarted.IntroFragment">
 
-    <Button
-        android:id="@+id/nextButton"
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Next"/>
-
+        android:text="Intro"
+        android:textSize="24sp"
+        android:gravity="center"/>
 
     <Button
-        android:id="@+id/finishButton"
+        android:id="@+id/shopNowButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Finish"/>
-
-
-
+        android:text="Shopping now"/>
 
 </LinearLayout>

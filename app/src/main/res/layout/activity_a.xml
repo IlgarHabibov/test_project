@@ -3,26 +3,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:id="@+id/mainFrame"
-    tools:context=".activities.MainActivity"
-    >
+    tools:context=".lesson16.ActivityA">
 
-    <Button
-        android:id="@+id/nextButton"
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/taskTableLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Next"/>
+        android:paddingHorizontal="16dp"/>
 
-
-    <Button
-        android:id="@+id/finishButton"
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/taskViewPager"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Finish"/>
-
-
-
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingHorizontal="16dp"/>
 
 </LinearLayout>

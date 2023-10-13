@@ -8,4 +8,6 @@
     <color name="green">#16A03D</color>
     <color name="blue">#428AD8</color>
     <color name="hint_color">#80000000</color>
+    <color name="dark_gray">#33302E</color>
+    <color name="color_divider">#F3F3F6</color>
 </resources>
