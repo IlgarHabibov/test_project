@@ -3,6 +3,7 @@ package com.example.atlandroidexamples.activities
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.atlandroidexamples.databinding.ActivityThirdBinding
+import com.example.atlandroidexamples.utils.SharedPrefs
 
 class FourthActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -11,20 +12,9 @@ class FourthActivity : AppCompatActivity() {
         val binding = ActivityThirdBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-//        val adapter = TestAdapter()
-//        binding.recycler.adapter = adapter
-//        binding.recycler.layoutManager = LinearLayoutManager(this)
-//        adapter.addData(createList())
+        val sharedPreferences = getSharedPreferences("MyData", MODE_PRIVATE)
+        SharedPrefs.setPrefs(sharedPreferences)
     }
 
 
-    private fun createList() = mutableListOf(
-        "Apple",
-        "Grapefruit",
-        "Kiwi",
-        "Lime",
-        "Mango",
-        "Orange",
-        "Lemon",
-    )
 }

@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".practice9.getstarted.IntroFragment">
 
@@ -13,10 +14,41 @@
         android:textSize="24sp"
         android:gravity="center"/>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/shopNowButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:elevation="5dp"
+        android:elevation="5dp"
         android:text="Shopping now"/>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardPreventCornerOverlap="false"
+        app:cardForegroundColor="@color/orange"
+        style="@style/Widget.Material3.CardView.Filled"
+        app:cardElevation="@dimen/dimen_10dp"
+        >
+
+
+        <View
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@color/orange"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:borderWidth="2dp"
+        android:src="@drawable/ic_chevron_left"
+        app:backgroundTint="@color/orange"
+        app:useCompatPadding="false"
+        style="FloatActionButton"
+        />
 
 </LinearLayout>

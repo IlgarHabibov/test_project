@@ -22,4 +22,8 @@
         <item name="boxStrokeColor">@color/blue</item>
     </style>
 
+    <style name="MyToolbarStyle">
+        <item name="colorControlNormal">@color/white</item>
+    </style>
+
 </resources>

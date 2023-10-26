@@ -35,11 +35,12 @@ class IntroFragment : Fragment() {
         val coffeeId = args.coffeeId
         val coffeeName = args.coffeeName
 
-        Toast.makeText(context, "$coffeeId  $coffeeName", Toast.LENGTH_SHORT).show()
+//        Toast.makeText(context, "$coffeeId  $coffeeName", Toast.LENGTH_SHORT).show()
 
         binding.shopNowButton.setOnClickListener {
 
             findNavController().navigate(R.id.action_introFragment2_to_authFragment)
+
         }
     }
 

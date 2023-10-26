@@ -28,11 +28,11 @@ class ThirdActivity : AppCompatActivity() {
         val price = intent.getDoubleExtra("price", 0.0)
         val iconId = intent.getIntExtra("imageId", 0)
 
-        binding?.image?.setImageResource(iconId)
-        binding?.name?.text = name
-        binding?.desc?.text = desc
-        binding?.rating?.text = rating
-        binding?.price?.text = price.toString()
+//        binding?.image?.setImageResource(iconId)
+//        binding?.name?.text = name
+//        binding?.desc?.text = desc
+//        binding?.rating?.text = rating
+//        binding?.price?.text = price.toString()
 
     }
 

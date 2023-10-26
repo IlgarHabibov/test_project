@@ -8,11 +8,12 @@
     <fragment
         android:id="@+id/welcomeFragment2"
         android:name="com.example.atlandroidexamples.practice9.getstarted.WelcomeFragment"
-        tools:layout="@layout/fragment_welcome" >
+        android:label="Welcome"
+        tools:layout="@layout/fragment_welcome">
 
         <action
             android:id="@+id/action_welcomeFragment2_to_nested_flow"
-            app:destination="@id/nested_flow" >
+            app:destination="@id/nested_flow">
 
             <argument
                 android:name="coffeeId"
@@ -32,5 +33,25 @@
 
     <include app:graph="@navigation/nested_flow" />
 
+
+    <action
+        android:id="@+id/action_to_authFragment"
+        app:destination="@id/authFragment" />
+
+    <fragment
+        android:id="@+id/firstFragment2"
+        android:name="com.example.atlandroidexamples.lesson18.FirstFragment"
+        android:label="fragment_first"
+        tools:layout="@layout/fragment_first" />
+    <fragment
+        android:id="@+id/secondFragment2"
+        android:name="com.example.atlandroidexamples.lesson18.SecondFragment"
+        android:label="fragment_second"
+        tools:layout="@layout/fragment_second" />
+    <fragment
+        android:id="@+id/thirdFragment2"
+        android:name="com.example.atlandroidexamples.lesson18.ThirdFragment"
+        android:label="fragment_third"
+        tools:layout="@layout/fragment_third" />
 
 </navigation>

@@ -20,10 +20,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.ATLAndroidExamples"
+        android:theme="@style/Base.Theme.ATLAndroidExamples"
         tools:targetApi="31">
         <activity
-            android:name=".practice9.ShopMainActivity"
+            android:name=".practice10.Practice10Activity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,13 +32,24 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".lesson18.HomeActivity"
+            android:name=".practice9.ShopMainActivity"
             android:exported="true">
 <!--            <intent-filter>-->
 <!--                <action android:name="android.intent.action.MAIN" />-->
 
 <!--                <category android:name="android.intent.category.LAUNCHER" />-->
 <!--            </intent-filter>-->
+        </activity>
+        <activity
+            android:name=".lesson18.HomeActivity"
+            android:exported="true">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity
             android:name=".lesson16.ActivityB"

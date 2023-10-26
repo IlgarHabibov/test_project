@@ -13,14 +13,17 @@
         android:id="@+id/myDialogFragment"
         android:name="com.example.atlandroidexamples.lesson19.MyDialogFragment"
         tools:layout="@layout/fragment_my_dialog" />
+
     <fragment
         android:id="@+id/authFragment"
         android:name="com.example.atlandroidexamples.practice9.auth.AuthFragment"
-        android:label="fragment_auth"
+        android:label="Auth"
         tools:layout="@layout/fragment_auth" />
+
     <fragment
         android:id="@+id/introFragment2"
         android:name="com.example.atlandroidexamples.practice9.getstarted.IntroFragment"
+        android:label="Intro"
         tools:layout="@layout/fragment_intro">
 
         <action
@@ -28,8 +31,11 @@
             app:destination="@id/myDialogFragment" />
         <action
             android:id="@+id/action_introFragment2_to_authFragment"
-            app:destination="@id/authFragment"
-            app:popUpTo="@id/welcomeFragment2" />
+            app:destination="@id/authFragment" >
+
+
+
+        </action>
 
         <argument
             android:name="coffeeId"
@@ -44,5 +50,7 @@
             app:nullable="true" />
 
     </fragment>
+
+
 
 </navigation>

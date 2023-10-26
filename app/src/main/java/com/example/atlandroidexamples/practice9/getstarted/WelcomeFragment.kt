@@ -1,14 +1,18 @@
 package com.example.atlandroidexamples.practice9.getstarted
 
+import android.net.Uri
 import android.os.Bundle
+import android.text.Html
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
+import androidx.core.text.toSpannable
 import androidx.navigation.fragment.findNavController
 import com.example.atlandroidexamples.R
 import com.example.atlandroidexamples.databinding.FragmentWelcomeBinding
+import com.example.atlandroidexamples.utils.SharedPrefs
 
 
 class WelcomeFragment : Fragment() {
@@ -34,7 +38,9 @@ class WelcomeFragment : Fragment() {
                     coffeeId = "Ilgar",
                     coffeeName = "Habibov"
                 )
+            SharedPrefs.putBool(SharedPrefs.IS_WELCOME_DONE, true)
             findNavController().navigate(action)
+
 
         }
     }
