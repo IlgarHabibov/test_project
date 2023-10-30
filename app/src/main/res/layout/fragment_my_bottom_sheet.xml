@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="@dimen/dimen_20dp"
-    tools:context=".lesson19.MyBottomSheetFragment">
+    tools:context=".lessons.lesson19.MyBottomSheetFragment">
 
 
     <TextView

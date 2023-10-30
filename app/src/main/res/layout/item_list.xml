@@ -9,12 +9,11 @@
         android:id="@+id/labelItem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="36sp"
+        android:textSize="16sp"
         android:textColor="@color/black"
-        android:layout_margin="10dp"
+        android:layout_marginBottom="10dp"
         android:padding="10dp"
         tools:text="Ilgar"
-        android:background="@color/red"
         />
 
 </LinearLayout>

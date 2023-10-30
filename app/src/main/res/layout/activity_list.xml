@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:paddingVertical="28dp"
     android:background="@color/color_divider"
-    tools:context=".practice.ListActivity">
+    tools:context=".practices.practice.ListActivity">
 
 
     <androidx.recyclerview.widget.RecyclerView

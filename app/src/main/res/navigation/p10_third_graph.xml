@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/p10_third_graph"
-    app:startDestination="@id/p10FifthFragment">
+    app:startDestination="@id/weatherFragment">
 
     <fragment
         android:id="@+id/p10FifthFragment"
@@ -19,4 +19,14 @@
         android:name="com.example.atlandroidexamples.practice10.fragments.P10SixthFragment"
         android:label="fragment_p10_sixth"
         tools:layout="@layout/fragment_p10_sixth" />
+    <fragment
+        android:id="@+id/l24Fragment"
+        android:name="com.example.atlandroidexamples.lessons.lesson24.fragment.L24Fragment"
+        android:label="fragment_l24"
+        tools:layout="@layout/fragment_l24" />
+    <fragment
+        android:id="@+id/weatherFragment"
+        android:name="com.example.atlandroidexamples.lessons.WeatherFragment"
+        android:label="fragment_weather"
+        tools:layout="@layout/fragment_weather" />
 </navigation>

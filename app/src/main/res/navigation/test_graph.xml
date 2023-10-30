@@ -40,17 +40,17 @@
 
     <fragment
         android:id="@+id/firstFragment2"
-        android:name="com.example.atlandroidexamples.lesson18.FirstFragment"
+        android:name="com.example.atlandroidexamples.lessons.lesson18.FirstFragment"
         android:label="fragment_first"
         tools:layout="@layout/fragment_first" />
     <fragment
         android:id="@+id/secondFragment2"
-        android:name="com.example.atlandroidexamples.lesson18.SecondFragment"
+        android:name="com.example.atlandroidexamples.lessons.lesson18.SecondFragment"
         android:label="fragment_second"
         tools:layout="@layout/fragment_second" />
     <fragment
         android:id="@+id/thirdFragment2"
-        android:name="com.example.atlandroidexamples.lesson18.ThirdFragment"
+        android:name="com.example.atlandroidexamples.lessons.lesson18.ThirdFragment"
         android:label="fragment_third"
         tools:layout="@layout/fragment_third" />
 
