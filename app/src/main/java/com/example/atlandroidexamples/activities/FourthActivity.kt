@@ -18,6 +18,7 @@ class FourthActivity : AppCompatActivity()
         val sharedPreferences = getSharedPreferences("MyData", MODE_PRIVATE)
         SharedPrefs.setPrefs(sharedPreferences)
 
+
     }
 
 

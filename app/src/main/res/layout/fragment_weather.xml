@@ -31,10 +31,11 @@
         android:layout_marginBottom="16dp"/>
 
     <ImageView
-        android:visibility="gone"
         android:id="@+id/iconWeather"
-        android:layout_width="100dp"
-        android:layout_height="100dp"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:scaleType="centerCrop"/>
 
     <TextView
         android:id="@+id/labelStatusWeather"

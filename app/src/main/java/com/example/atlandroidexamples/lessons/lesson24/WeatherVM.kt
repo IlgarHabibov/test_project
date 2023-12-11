@@ -23,28 +23,33 @@ class WeatherVM: ViewModel() {
         count++
         val userId = 4
 
-        NetworkManager.apiService
-            .getUser(  count)
-            .enqueue(object: Callback<User?>{
-                override fun onResponse(call: Call<User?>, response: Response<User?>) {
-                    weatherData.postValue(response.body())
+//        NetworkManager.apiService
+//            .getUser(  count)
+//            .enqueue(object: Callback<User?>{
+//                override fun onResponse(call: Call<User?>, response: Response<User?>) {
+//                    weatherData.postValue(response.body())
+//                }
+//
+//                override fun onFailure(call: Call<User?>, t: Throwable) {
+//
+//                }
+//
+//            })
+
+        NetworkManager.apiService?.getCurrentWeather(NetworkManager.API_KEY, "Baku")
+            ?.enqueue(object : Callback<CurrentWeatherModel>{
+                override fun onResponse(
+                    call: Call<CurrentWeatherModel>,
+                    response: Response<CurrentWeatherModel>
+                ) {
+                    TODO("Not yet implemented")
                 }
 
-                override fun onFailure(call: Call<User?>, t: Throwable) {
-
+                override fun onFailure(call: Call<CurrentWeatherModel>, t: Throwable) {
+                    TODO("Not yet implemented")
                 }
 
             })
-
-//        NetworkManager.getCurrentWeather(
-//            city,
-//            onSuccess = {
-//
-//            },
-//            onError = {
-//
-//            }
-//        )
     }
 
 }

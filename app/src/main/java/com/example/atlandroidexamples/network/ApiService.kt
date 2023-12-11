@@ -1,14 +1,15 @@
 package com.example.atlandroidexamples.network
 
+import com.example.atlandroidexamples.network.model.AlbumModel
 import com.example.atlandroidexamples.network.model.CurrentWeatherModel
 import com.example.atlandroidexamples.network.model.User
 import retrofit2.Call
 import retrofit2.http.GET
+import retrofit2.http.Headers
 import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface ApiService {
-
 
     @GET("v1/current.json")
     fun getCurrentWeather(
@@ -21,4 +22,12 @@ interface ApiService {
     fun getUser(
         @Path("userId") userId: Int
     ): Call<User>
+
+
+    @GET("photos")
+    fun getAlbums(): Call<List<AlbumModel>>
+
+
+    @GET("photos")
+    suspend fun getAlbums2(): List<AlbumModel>
 }

@@ -15,8 +15,8 @@ class P10SixthFragment : Fragment() {
     private lateinit var binding: FragmentP10SixthBinding
 
 
-    private val factory = NoteViewModelFactory(MyDB.appDatabase?.getPersonDAO())
-    private val viewModel: NoteViewModel = factory.create(NoteViewModel::class.java)
+//    private val factory = NoteViewModelFactory(MyDB.appDatabase?.getPersonDAO())
+//    private val viewModel: NoteViewModel = factory.create(NoteViewModel::class.java)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,17 +30,17 @@ class P10SixthFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        viewModel.allUsers?.observe(viewLifecycleOwner){
-            val userId = it.map { it.id }
-            binding.title.text = userId.toString()
-        }
-        binding.nextButton.setOnClickListener {
-            viewModel.insert()
-        }
-
-        binding.backButton.setOnClickListener {
-            viewModel.getUsers()
-        }
+//        viewModel.allUsers?.observe(viewLifecycleOwner){
+//            val userId = it.map { it.id }
+//            binding.title.text = userId.toString()
+//        }
+//        binding.nextButton.setOnClickListener {
+//            viewModel.insert()
+//        }
+//
+//        binding.backButton.setOnClickListener {
+//            viewModel.getUsers()
+//        }
     }
 
 }

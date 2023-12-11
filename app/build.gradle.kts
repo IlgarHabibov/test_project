@@ -3,6 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     kotlin("kapt")
     id("androidx.navigation.safeargs.kotlin")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -41,6 +42,10 @@ android {
     }
 }
 
+kapt {
+    correctErrorTypes = true
+}
+
 dependencies {
 
     // Core ktx
@@ -59,7 +64,6 @@ dependencies {
     val navVersion = "2.7.4"
     implementation("androidx.navigation:navigation-fragment-ktx:$navVersion")
     implementation("androidx.navigation:navigation-ui-ktx:$navVersion")
-
 
     // Lifecycle
     val lifecycleVersion = "2.6.2"
@@ -80,12 +84,26 @@ dependencies {
     implementation ("com.squareup.retrofit2:converter-gson:$retrofitVersion")
 
     //Okhttp
-    val okhttpVersion = "4.9.0"
+    val okhttpVersion = "4.11.0"
     implementation("com.squareup.okhttp3:okhttp:$okhttpVersion")
-    implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:$okhttpVersion")
+
+    // Dagger Hilt
+    implementation("com.google.dagger:hilt-android:2.46.1")
+    kapt("com.google.dagger:hilt-android-compiler:2.46.1")
+
+    // Coroutines
+    val coroutiesVersion = "1.7.1"
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutiesVersion")
 
     //Coil
     implementation("io.coil-kt:coil:2.4.0")
+
+    //Picasso
+    implementation("com.squareup.picasso:picasso:2.8")
+
+    // Glide
+    implementation("com.github.bumptech.glide:glide:4.16.0")
 
     // Testing
     testImplementation("junit:junit:4.13.2")

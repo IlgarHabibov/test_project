@@ -25,40 +25,42 @@
         tools:targetApi="31">
 
         <activity
-            android:name=".practices.practice10.Practice10Activity"
+            android:name=".lessons.lesson27.HiltTestActivity"
             android:exported="true" >
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
 
         <activity
-            android:name=".practices.practice9.ShopMainActivity"
+            android:name=".practices.practice10.Practice10Activity"
             android:exported="false"/>
         <activity
+            android:name=".practices.practice9.ShopMainActivity"
+            android:exported="false" />
+        <activity
             android:name=".lessons.lesson18.HomeActivity"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".lessons.lesson16.ActivityB"
             android:exported="false" />
         <activity
             android:name=".lessons.lesson16.ActivityA"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".lessons.lesson16.PermissionsActivity"
             android:exported="false" />
         <activity
             android:name=".practices.practice.ListActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".activities.FourthActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".activities.ThirdActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".activities.SecondActivity"
             android:exported="false" />

@@ -23,33 +23,33 @@ import retrofit2.http.QueryMap
 
 class SimpleListViewModel: ViewModel() {
 
-    private val textDAO = MyDB.appDatabase?.getTextDAO()
+//    private val textDAO = MyDB.appDatabase?.getTextDAO()
 
     private var textEntity: TextEntity? = null
 
-    val data: LiveData<List<TextEntity>>? = textDAO?.getAllTexts()
+//    val data: LiveData<List<TextEntity>>? = textDAO?.getAllTexts()
 
     val entityData = MutableLiveData<TextEntity>()
 
 
     fun addNewText (text: String){
-        if (textEntity != null){
-            textEntity?.text = text
-            textDAO?.updateText(textEntity!!)
-            textEntity  = null
-        }else {
-            textDAO?.addText(TextEntity(text = text))
-        }
+//        if (textEntity != null){
+//            textEntity?.text = text
+//            textDAO?.updateText(textEntity!!)
+//            textEntity  = null
+//        }else {
+//            textDAO?.addText(TextEntity(text = text))
+//        }
     }
 
     fun setTextEntityFromList(textEntity: TextEntity){
-        this.textEntity = textEntity
-        entityData.postValue(textEntity)
+//        this.textEntity = textEntity
+//        entityData.postValue(textEntity)
     }
 
 
     fun delete(data: TextEntity){
-        textDAO?.deleteText(data)
+//        textDAO?.deleteText(data)
 
     }
 

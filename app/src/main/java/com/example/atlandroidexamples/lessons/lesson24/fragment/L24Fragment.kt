@@ -36,9 +36,9 @@ class L24Fragment : Fragment() {
 
         binding.textList.adapter = adapter
 
-        viewModel.data?.observe(viewLifecycleOwner){
-            adapter.updateData(it)
-        }
+//        viewModel.data?.observe(viewLifecycleOwner){
+//            adapter.updateData(it)
+//        }
 
         viewModel.entityData.observe(viewLifecycleOwner){
 

@@ -5,7 +5,7 @@ object MyDB{
     var appDatabase: AppDatabase? = null
 
     fun setDataBase(appDatabase: AppDatabase){
-        MyDB.appDatabase = appDatabase
+//        MyDB.appDatabase = appDatabase
     }
 
 }
