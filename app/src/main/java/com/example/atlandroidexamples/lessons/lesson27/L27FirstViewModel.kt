@@ -11,6 +11,7 @@ import com.example.atlandroidexamples.lessons.lesson28.AuthRepository
 import com.example.atlandroidexamples.network.ApiService
 import com.example.atlandroidexamples.network.AuthApiService
 import com.example.atlandroidexamples.network.NetworkManager
+import com.example.atlandroidexamples.network.handleResult
 import com.example.atlandroidexamples.network.model.AlbumModel
 import com.example.atlandroidexamples.network.result.ResultWrapper
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -56,32 +57,56 @@ import kotlin.coroutines.CoroutineContext
 
 @HiltViewModel
 class L27FirstViewModel @Inject constructor(
-    private val repository: AlbumRepository
-): ViewModel() {
+    private val repository: AlbumRepository,
+    private val apiService: ApiService
+) : ViewModel() {
 
     private var _state = MutableStateFlow(listOf<AlbumModel>())
     val state = _state.asStateFlow()
 
-    fun getData(){
-        viewModelScope.launch{
-            when(val result =repository.getAlbums()){
-                is ResultWrapper.Success -> {
-                    _state.value = result.data ?: listOf()
-                }
-                is ResultWrapper.Error -> {
-                    Log.d(TAG, "error -> $result")
-                }
-            }
-
-        }
-    }
-
-    fun getUser(id: Int){
+    fun getData() {
         viewModelScope.launch {
-            when(val result =repository.getUsers(id)){
+            val result = repository.getAlbums()
+            result.collect {
+                when (it) {
+                    is ResultWrapper.Success -> {
+                        it.data?.forEach {
+                            Log.d(TAG, " Element -> $it")
+                        }
+                    }
+                    is ResultWrapper.Error -> {
+                        Log.d(TAG, "error -> $result")
+                    }
+                }
+            }
+
+
+//            val result = handleResult {
+//                apiService.getAlbums2()
+//            }
+//
+//            when(result){
+//                is ResultWrapper.Success -> {
+//                    result.data?.forEach {
+//                        Log.d(TAG, " Element -> $it")
+//                    }
+//                    _state.value = result.data ?: listOf()
+//                }
+//                is ResultWrapper.Error -> {
+//                    Log.d(TAG, "error -> $result")
+//                }
+//            }
+
+        }
+    }
+
+    fun getUser(id: Int) {
+        viewModelScope.launch {
+            when (val result = repository.getUsers(id)) {
                 is ResultWrapper.Success -> {
 
                 }
+
                 is ResultWrapper.Error -> {
                     Log.d(TAG, "error -> $result")
                 }
@@ -90,16 +115,13 @@ class L27FirstViewModel @Inject constructor(
     }
 
 
-    fun getName(): String{
+    fun getName(): String {
 
         return ""
     }
 
 
-
-
-
-    companion object{
+    companion object {
         private const val TAG = "CoroutinesTestTag"
     }
 }

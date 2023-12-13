@@ -12,10 +12,12 @@ class AlbumRepository @Inject constructor(
     private val apiService: ApiService
 ) {
 
-    suspend fun getAlbums(): ResultWrapper<List<AlbumModel>?>{
-        return handleResult {
-             apiService.getAlbums2()
+    suspend fun getAlbums() = flow<ResultWrapper<List<AlbumModel>?>>{
+         val result = handleResult {
+              apiService.getAlbums2()
         }
+
+        emit(result)
     }
 
     suspend fun getUsers(userId: Int):  ResultWrapper<User?>{

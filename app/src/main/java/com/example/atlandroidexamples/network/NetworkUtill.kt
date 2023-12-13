@@ -1,6 +1,5 @@
 package com.example.atlandroidexamples.network
 
-import com.example.atlandroidexamples.network.result.ErrorModel
 import com.example.atlandroidexamples.network.result.ResultWrapper
 import com.google.gson.Gson
 import okhttp3.ResponseBody
@@ -15,7 +14,7 @@ suspend fun <T> handleResult(
         if(result?.isSuccessful == true){
             ResultWrapper.Success(result.body())
         }else{
-            val errorBody = result?.errorBody()?.getErrorObject<ErrorModel>()
+//            val errorBody = result?.errorBody()?.getErrorObject<ErrorModel>()
             ResultWrapper.Error(message = "Xeta Bas verdi")
         }
     }catch (throwable:Throwable){
