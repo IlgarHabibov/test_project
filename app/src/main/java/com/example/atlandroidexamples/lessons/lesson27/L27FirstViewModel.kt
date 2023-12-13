@@ -12,6 +12,7 @@ import com.example.atlandroidexamples.network.ApiService
 import com.example.atlandroidexamples.network.AuthApiService
 import com.example.atlandroidexamples.network.NetworkManager
 import com.example.atlandroidexamples.network.model.AlbumModel
+import com.example.atlandroidexamples.network.result.ResultWrapper
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineExceptionHandler
@@ -55,76 +56,47 @@ import kotlin.coroutines.CoroutineContext
 
 @HiltViewModel
 class L27FirstViewModel @Inject constructor(
-   private val apiService: ApiService
+    private val repository: AlbumRepository
 ): ViewModel() {
 
+    private var _state = MutableStateFlow(listOf<AlbumModel>())
+    val state = _state.asStateFlow()
 
-    val data = MutableLiveData<String>()
+    fun getData(){
+        viewModelScope.launch{
+            when(val result =repository.getAlbums()){
+                is ResultWrapper.Success -> {
+                    _state.value = result.data ?: listOf()
+                }
+                is ResultWrapper.Error -> {
+                    Log.d(TAG, "error -> $result")
+                }
+            }
 
+        }
+    }
 
-    val state = MutableStateFlow(0)
+    fun getUser(id: Int){
+        viewModelScope.launch {
+            when(val result =repository.getUsers(id)){
+                is ResultWrapper.Success -> {
 
-    val shared = MutableSharedFlow<Int>(
-        replay = 1,
-        extraBufferCapacity = 2,
-        onBufferOverflow = BufferOverflow.SUSPEND
-    )
+                }
+                is ResultWrapper.Error -> {
+                    Log.d(TAG, "error -> $result")
+                }
+            }
+        }
+    }
+
 
     fun getName(): String{
 
         return ""
     }
 
-    fun startCoroutines(){
 
 
-        viewModelScope.launch {
-
-            delay(2000)
-            shared.emit(22)
-            delay(2000)
-            shared.tryEmit(46)
-        }
-//
-//            val flow1 = flowOf(1,2,3,4)
-//            val flow2 = flowOf(5,6,7,8,9, 10)
-//
-//
-//            flow1.zip(flow2){element1, element2 ->
-//                element1 + element2
-//            }.collect{element ->
-//                Log.d(TAG, " element -> $element")
-//
-//            }
-//
-//            list.asFlow()
-//                .filter { element
-//                    -> element >= 3
-//                }
-//                .map { element ->
-//                    element - 1
-//                }
-//                .transform { element ->
-//                    emit("$element start")
-//                    emit("$element ${element - 1}")
-//                    emit("$element ${element - 2}")
-//                    emit("$element end")
-//                }
-//                .collect{element ->
-////                    Log.d(TAG, " element -> $element")
-//                }
-
-    }
-
-
-    private fun createFlow() = flow{
-        emit(0)
-        emit(1)
-        emit(2)
-        emit(3)
-        emit(4)
-        emit(5)
-    }
 
 
     companion object{

@@ -4,6 +4,7 @@ import com.example.atlandroidexamples.network.model.AlbumModel
 import com.example.atlandroidexamples.network.model.CurrentWeatherModel
 import com.example.atlandroidexamples.network.model.User
 import retrofit2.Call
+import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Headers
 import retrofit2.http.Path
@@ -19,9 +20,9 @@ interface ApiService {
 
 
     @GET("users/{userId}")
-    fun getUser(
+    suspend fun getUser(
         @Path("userId") userId: Int
-    ): Call<User>
+    ): Response<User>
 
 
     @GET("photos")
@@ -29,5 +30,6 @@ interface ApiService {
 
 
     @GET("photos")
-    suspend fun getAlbums2(): List<AlbumModel>
+    suspend fun getAlbums2(): Response<List<AlbumModel>?>
+
 }

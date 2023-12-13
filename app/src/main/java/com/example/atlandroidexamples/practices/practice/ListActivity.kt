@@ -23,6 +23,7 @@ class ListActivity : AppCompatActivity() {
 
     private var binding: ActivityListBinding? = null
 //    private val adapter = SettingsAdapter(createSettingsList())
+
     private val adapter = CoffeeAdapter(createCoffeeList())
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,12 +48,20 @@ class ListActivity : AppCompatActivity() {
         }
         val space = SpaceItemDecoration(resources.getDimensionPixelSize(R.dimen.dimen_10dp))
         binding?.settingsList?.addItemDecoration(space)
+
+
+
+
         adapter.setItemClickListener(object : CoffeeAdapter.OnItemClickListener{
             override fun onItemClick(coffee: Coffee) {
                 changeScreen(coffee)
             }
-
         })
+
+
+        adapter.setClickListener { coffee ->
+            changeScreen(coffee)
+        }
 
     }
 

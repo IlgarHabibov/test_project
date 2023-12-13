@@ -8,15 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.example.atlandroidexamples.databinding.FragmentL27FirstBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
 
 @AndroidEntryPoint
@@ -25,6 +22,7 @@ class L27FirstFragment() : Fragment() {
     private lateinit var binding: FragmentL27FirstBinding
 
     private val viewModel by viewModels<L27FirstViewModel>()
+
 
 
     override fun onCreateView(
@@ -39,23 +37,7 @@ class L27FirstFragment() : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
-        lifecycleScope.launch {
-            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED){
-                viewModel.shared.collect{ value ->
-                    Log.d(TAG, "element -> $value")
-                }
-            }
-        }
-
-
-//        collectFlow(viewModel.state){value ->
-//            Log.d(TAG, "element -> $value")
-//        }
-
-        viewModel.startCoroutines()
-        binding.label.text = viewModel.getName()
+        viewModel.getData()
     }
 
 

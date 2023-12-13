@@ -12,7 +12,13 @@ class CoffeeAdapter(private val coffeeList: List<Coffee>) :
     private var onItemClickListener: OnItemClickListener? = null
 
     fun setItemClickListener(clickListener: OnItemClickListener) {
-        onItemClickListener = clickListener
+//        onItemClickListener = clickListener
+    }
+
+    var onClickListener: ((coffee: Coffee) -> Unit)? = null
+
+    fun setClickListener(listener:(coffee: Coffee) -> Unit){
+        onClickListener = listener
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CoffeeViewHolder {
@@ -29,13 +35,13 @@ class CoffeeAdapter(private val coffeeList: List<Coffee>) :
     }
 
     override fun onBindViewHolder(holder: CoffeeViewHolder, position: Int) {
-        holder.bind(coffeeList[position], onItemClickListener)
+        holder.bind(coffeeList[position], onItemClickListener, onClickListener)
     }
 
     class CoffeeViewHolder(private val binding: ItemCoffeeBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(data: Coffee, onClickListener: OnItemClickListener?) {
+        fun bind(data: Coffee, onClickListener: OnItemClickListener?, clickListener: ((coffee: Coffee) -> Unit)?) {
             binding.name.text = data.name
             binding.desc.text = data.desc
             binding.priceChocolate.text = data.price.toString()
@@ -43,6 +49,8 @@ class CoffeeAdapter(private val coffeeList: List<Coffee>) :
             binding.imageChocolate.setImageResource(data.iconId)
             binding.parentChocolate.setOnClickListener {
                 onClickListener?.onItemClick(data)
+
+                clickListener?.invoke(data)
             }
         }
     }

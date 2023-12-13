@@ -1,6 +1,7 @@
 package com.example.atlandroidexamples.lessons.lesson28
 
 import android.content.Context
+import com.example.atlandroidexamples.lessons.lesson27.AlbumRepository
 import com.example.atlandroidexamples.lessons.lesson27.L27Repository
 import com.example.atlandroidexamples.lessons.lesson27.NetworkHelper
 import com.example.atlandroidexamples.lessons.practice14.AServiceClient
@@ -38,8 +39,6 @@ object NetworkModule {
             .build()
     }
 
-
-
     @Singleton
     @Provides
     fun provideGsonConverterFactory(): GsonConverterFactory{
@@ -72,6 +71,11 @@ object NetworkModule {
     @Provides
     fun provideRepository(networkHelper: NetworkHelper): L27Repository{
         return L27Repository(networkHelper)
+    }
+
+    @Provides
+    fun provideAlbumRepository(apiService: ApiService): AlbumRepository {
+        return AlbumRepository(apiService)
     }
 
 
