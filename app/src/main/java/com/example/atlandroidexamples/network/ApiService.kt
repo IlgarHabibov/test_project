@@ -28,6 +28,9 @@ interface ApiService {
     @GET("photos")
     fun getAlbums(): Call<List<AlbumModel>>
 
+    @GET("users/1")
+    suspend fun getAlbums1(): Response<List<AlbumModel>>
+
 
     @GET("photos")
     suspend fun getAlbums2(): Response<List<AlbumModel>?>

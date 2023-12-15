@@ -10,8 +10,10 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import com.example.atlandroidexamples.R
 import com.example.atlandroidexamples.databinding.FragmentAlbumsBinding
+import dagger.hilt.android.AndroidEntryPoint
 
 
+@AndroidEntryPoint
 class AlbumsFragment : Fragment() {
 
     private lateinit var binding: FragmentAlbumsBinding
@@ -31,8 +33,6 @@ class AlbumsFragment : Fragment() {
 
         binding.albumsRecyclerView.adapter = adapter
         viewModel.data.observe(viewLifecycleOwner){state ->
-
-
             when(state){
                 is AlbumsState.Success -> {
                     binding.albumsProgress.isVisible = false
@@ -42,7 +42,8 @@ class AlbumsFragment : Fragment() {
                     binding.albumsProgress.isVisible = false
                     Toast.makeText(requireContext(), "${state.message}", Toast.LENGTH_SHORT).show()
                 }
-                is AlbumsState.Loading ->binding.albumsProgress.isVisible = true
+                is AlbumsState.Loading -> binding.albumsProgress.isVisible = true
+                else -> {}
             }
 
         }

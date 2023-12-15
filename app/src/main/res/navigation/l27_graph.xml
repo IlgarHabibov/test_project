@@ -3,11 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/l27_graph"
-    app:startDestination="@id/l27FirstFragment">
+    app:startDestination="@id/albumsFragment2">
 
     <fragment
         android:id="@+id/l27FirstFragment"
         android:name="com.example.atlandroidexamples.lessons.lesson27.L27FirstFragment"
         android:label="fragment_l27_first"
         tools:layout="@layout/fragment_l27_first" />
+    <fragment
+        android:id="@+id/albumsFragment2"
+        android:name="com.example.atlandroidexamples.lessons.lesson26.AlbumsFragment"
+        android:label="fragment_albums"
+        tools:layout="@layout/fragment_albums" />
 </navigation>

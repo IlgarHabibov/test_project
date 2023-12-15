@@ -31,6 +31,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asFlow
+import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collect
@@ -57,69 +58,29 @@ import kotlin.coroutines.CoroutineContext
 
 @HiltViewModel
 class L27FirstViewModel @Inject constructor(
-    private val repository: AlbumRepository,
-    private val apiService: ApiService
+   private val apiService: ApiService
 ) : ViewModel() {
 
-    private var _state = MutableStateFlow(listOf<AlbumModel>())
-    val state = _state.asStateFlow()
+    val data = MutableLiveData<List<AlbumModel>>()
 
     fun getData() {
-        viewModelScope.launch {
-            val result = repository.getAlbums()
-            result.collect {
-                when (it) {
-                    is ResultWrapper.Success -> {
-                        it.data?.forEach {
-                            Log.d(TAG, " Element -> $it")
-                        }
-                    }
-                    is ResultWrapper.Error -> {
-                        Log.d(TAG, "error -> $result")
-                    }
+        apiService.getAlbums().enqueue(object : Callback<List<AlbumModel>>{
+
+            override fun onResponse(
+                call: Call<List<AlbumModel>>,
+                response: Response<List<AlbumModel>>
+            ) {
+                if (response.isSuccessful){
+                    data.postValue(response.body())
                 }
             }
 
-
-//            val result = handleResult {
-//                apiService.getAlbums2()
-//            }
-//
-//            when(result){
-//                is ResultWrapper.Success -> {
-//                    result.data?.forEach {
-//                        Log.d(TAG, " Element -> $it")
-//                    }
-//                    _state.value = result.data ?: listOf()
-//                }
-//                is ResultWrapper.Error -> {
-//                    Log.d(TAG, "error -> $result")
-//                }
-//            }
-
-        }
-    }
-
-    fun getUser(id: Int) {
-        viewModelScope.launch {
-            when (val result = repository.getUsers(id)) {
-                is ResultWrapper.Success -> {
-
-                }
-
-                is ResultWrapper.Error -> {
-                    Log.d(TAG, "error -> $result")
-                }
+            override fun onFailure(call: Call<List<AlbumModel>>, t: Throwable) {
+                TODO("Not yet implemented")
             }
-        }
+
+        })
     }
-
-
-    fun getName(): String {
-
-        return ""
-    }
-
 
     companion object {
         private const val TAG = "CoroutinesTestTag"

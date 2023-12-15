@@ -13,8 +13,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 object NetworkManager {
 
     var apiService: ApiService? = null
-    private const val BASE_URL = "https://api.weatherapi.com/"
-//    private const val BASE_URL = "https://jsonplaceholder.typicode.com/"
+//    private const val BASE_URL = "https://api.weatherapi.com/"
+    private const val BASE_URL = "https://jsonplaceholder.typicode.com/"
     const val API_KEY = "5f045bd5a7c5423d8d370713233010"
 
     init {
