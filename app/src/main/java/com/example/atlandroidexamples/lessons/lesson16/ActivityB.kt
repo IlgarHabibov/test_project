@@ -6,6 +6,7 @@ import android.os.Bundle
 import com.example.atlandroidexamples.R
 import com.example.atlandroidexamples.databinding.ActivityABinding
 import com.example.atlandroidexamples.databinding.ActivityBBinding
+import com.example.atlandroidexamples.lessons.lesson33.TestService
 
 class ActivityB : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,9 +23,22 @@ class ActivityB : AppCompatActivity() {
 
 
         binding.buttonBackToA.setOnClickListener {
-            onBackToAClick()
+            val intent = Intent(applicationContext, TestService::class.java)
+            intent.action = "Start"
+            startService(intent)
         }
 
+
+
+
+
+    }
+
+
+    fun onSecondButtonClick(){
+        val intent = Intent(applicationContext, TestService::class.java)
+        intent.action = "Start New"
+        startService(intent)
     }
 
     private fun onBackToAClick() {

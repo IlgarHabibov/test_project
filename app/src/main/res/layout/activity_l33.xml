@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".lessons.lesson33.L33Activity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:text="0"
+        android:layout_marginBottom="40dp"/>
+
+
+    <Button
+        android:id="@+id/buttonShow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Show notification"
+        />
+
+    <Button
+        android:id="@+id/buttonClose"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Close notification"
+        />
+
+    <Button
+        android:id="@+id/buttonBound"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bound service"
+        android:layout_marginTop="40dp"
+        />
+
+    <Button
+        android:id="@+id/buttonUnBound"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Unbound service"
+        />
+
+</LinearLayout>
