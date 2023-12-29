@@ -31,25 +31,28 @@ class AlbumsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.albumsRecyclerView.adapter = adapter
-        viewModel.data.observe(viewLifecycleOwner){state ->
-            when(state){
-                is AlbumsState.Success -> {
-                    binding.albumsProgress.isVisible = false
-                    state.albumsList?.let { adapter.updateData(it) }
-                }
-                is AlbumsState.Error ->{
-                    binding.albumsProgress.isVisible = false
-                    Toast.makeText(requireContext(), "${state.message}", Toast.LENGTH_SHORT).show()
-                }
-                is AlbumsState.Loading -> binding.albumsProgress.isVisible = true
-                else -> {}
+        with(binding){
+            albumsRecyclerView.adapter = adapter
+            loadButton.setOnClickListener {
+                viewModel.getAlbums()
             }
-
         }
 
-        binding.loadButton.setOnClickListener {
-            viewModel.getAlbums()
+        viewModel.data.observe(viewLifecycleOwner, ::onStateChange)
+    }
+
+    private fun onStateChange(state: AlbumsState){
+        when(state){
+            is AlbumsState.Success -> {
+                binding.albumsProgress.isVisible = false
+                state.albumsList?.let { adapter.updateData(it) }
+            }
+            is AlbumsState.Error ->{
+                binding.albumsProgress.isVisible = false
+                Toast.makeText(requireContext(), "${state.message}", Toast.LENGTH_SHORT).show()
+            }
+            is AlbumsState.Loading -> binding.albumsProgress.isVisible = true
+            else -> {}
         }
     }
 

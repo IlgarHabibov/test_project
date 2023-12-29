@@ -44,6 +44,13 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         Log.d("ActivityLifeCycle", "onResume..")
+
+        startActivity(Intent(
+            this,
+            SecondActivity::class.java
+        ).also {
+        })
+
     }
 
     override fun onPause() {

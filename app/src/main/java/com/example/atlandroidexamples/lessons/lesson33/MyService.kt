@@ -39,6 +39,7 @@ class MyService : Service() {
             .setContentText("Habibov")
             .build()
         startForeground(ID, notification)
+
     }
 
     companion object {

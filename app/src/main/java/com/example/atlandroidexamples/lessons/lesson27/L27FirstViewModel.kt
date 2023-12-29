@@ -82,6 +82,8 @@ class L27FirstViewModel @Inject constructor(
         })
     }
 
+    fun getName() = "Ilgar"
+
     companion object {
         private const val TAG = "CoroutinesTestTag"
     }

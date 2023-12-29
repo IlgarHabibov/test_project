@@ -54,14 +54,12 @@ class ListActivity : AppCompatActivity() {
 
         adapter.setItemClickListener(object : CoffeeAdapter.OnItemClickListener{
             override fun onItemClick(coffee: Coffee) {
-                changeScreen(coffee)
+
             }
         })
 
 
-        adapter.setClickListener { coffee ->
-            changeScreen(coffee)
-        }
+        adapter.setClickListener(::changeScreen)
 
     }
 

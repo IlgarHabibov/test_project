@@ -26,6 +26,9 @@ class L27FirstFragment() : Fragment() {
 
 
 
+
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -34,6 +37,8 @@ class L27FirstFragment() : Fragment() {
         binding = FragmentL27FirstBinding.inflate(inflater, container, false)
         return binding.root
     }
+
+
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -48,6 +53,8 @@ class L27FirstFragment() : Fragment() {
 
 
     }
+
+
 
 
     companion object{

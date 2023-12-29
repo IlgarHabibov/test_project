@@ -18,7 +18,6 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class L33Activity : AppCompatActivity() {
     private lateinit var binding: ActivityL33Binding
-    private val requestPermission = registerForActivityResult(ActivityResultContracts.RequestPermission()){}
 
     private var boundService: MyBoundService? = null
     private var isBound = false
@@ -45,6 +44,9 @@ class L33Activity : AppCompatActivity() {
 
     }
 
+    private val requestPermission = registerForActivityResult(ActivityResultContracts.RequestPermission()){}
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityL33Binding.inflate(layoutInflater)
@@ -53,6 +55,9 @@ class L33Activity : AppCompatActivity() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             requestPermission.launch(Manifest.permission.POST_NOTIFICATIONS)
         }
+
+
+
 
         binding.buttonShow.setOnClickListener {
             startMyService(MyService.Actions.SHOW.toString())
