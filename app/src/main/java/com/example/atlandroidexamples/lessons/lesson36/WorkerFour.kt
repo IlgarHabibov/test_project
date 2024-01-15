@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.work.CoroutineWorker
 import androidx.work.Worker
 import androidx.work.WorkerParameters
+import androidx.work.workDataOf
 import com.example.atlandroidexamples.utils.Constants
 import kotlinx.coroutines.delay
 
@@ -16,7 +17,8 @@ class WorkerFour(
         logWorkResult("WorkerFour started")
         delay(4000)
         logWorkResult("WorkerFour ended")
-        return Result.success()
+
+        return Result.success(workDataOf())
     }
 
 }

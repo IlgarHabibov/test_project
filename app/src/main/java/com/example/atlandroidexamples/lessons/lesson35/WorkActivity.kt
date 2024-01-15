@@ -78,6 +78,7 @@ class WorkActivity : AppCompatActivity() {
             .addTag("WorkerFive")
             .build()
 
+
         val one = OneTimeWorkRequestBuilder<WorkerOne>()
             .addTag("WorkerOne")
             .build()
@@ -95,9 +96,12 @@ class WorkActivity : AppCompatActivity() {
             .build()
 
 
+        val request = OneTimeWorkRequestBuilder<UploadImageWorker>()
+            .build()
+
         WorkManager
             .getInstance(applicationContext)
-            .enqueue(one)
+            .enqueue(request)
 
         WorkManager.getInstance(applicationContext)
             .getWorkInfoByIdLiveData(one.id)

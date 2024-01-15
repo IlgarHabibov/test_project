@@ -11,18 +11,13 @@ class UploadImageWorker(
 ): Worker(context, workerParameters) {
 
     override fun doWork(): Result {
-        val imageURI = "file://downloads/test.jpg"
-
-        val image = getImageFromGallery(imageURI)
-        Log.d("UploadImageWorkerTAG", "$image uploading ...!")
-
+       uploadImage()
         return Result.success()
 
     }
 
-
-    private fun getImageFromGallery(path: String): String{
-        return "image"
+    private fun uploadImage(){
+        // Code for uploading image
     }
 
 }
