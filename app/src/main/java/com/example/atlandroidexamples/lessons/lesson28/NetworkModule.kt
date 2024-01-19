@@ -1,6 +1,7 @@
 package com.example.atlandroidexamples.lessons.lesson28
 
 import android.content.Context
+import com.example.atlandroidexamples.RetrofitConstants
 import com.example.atlandroidexamples.lessons.lesson27.AlbumRepository
 import com.example.atlandroidexamples.lessons.lesson27.L27Repository
 import com.example.atlandroidexamples.lessons.lesson27.NetworkHelper
@@ -33,7 +34,7 @@ object NetworkModule {
         okHttpClient: OkHttpClient
     ): Retrofit{
         return Retrofit.Builder()
-            .baseUrl("https://jsonplaceholder.typicode.com/")
+            .baseUrl(RetrofitConstants.BASE_URL)
             .addConverterFactory(gsonConverterFactory)
             .client(okHttpClient)
             .build()

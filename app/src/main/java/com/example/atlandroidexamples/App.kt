@@ -5,11 +5,9 @@ import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
 import android.os.Build
-import androidx.room.Room
-import com.example.atlandroidexamples.db.AppDatabase
-import com.example.atlandroidexamples.db.MyDB
-import com.example.atlandroidexamples.lessons.lesson33.MyService
+import android.util.Log
 import com.example.atlandroidexamples.utils.Constants
+import com.example.test_lib.LibraryTest
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
@@ -17,6 +15,11 @@ class App: Application() {
 
 
     override fun onCreate() {
+
+        val test = LibraryTest()
+        
+
+        Log.d("ApplicationTAG", "url = ${test.name}")
         super.onCreate()
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
             val channel = NotificationChannel(

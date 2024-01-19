@@ -15,3 +15,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "ATLAndroidExamples"
 include(":app")
+include(":test-lib")
+include(":my-library")

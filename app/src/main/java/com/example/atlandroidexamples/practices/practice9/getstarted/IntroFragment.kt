@@ -11,6 +11,7 @@ import com.example.atlandroidexamples.R
 import com.example.atlandroidexamples.databinding.FragmentIntroBinding
 import com.example.atlandroidexamples.databinding.FragmentWelcomeBinding
 import com.example.atlandroidexamples.practice9.getstarted.IntroFragmentArgs
+import com.example.atlandroidexamples.practice9.getstarted.IntroFragmentDirections
 
 
 class IntroFragment : Fragment() {
@@ -34,6 +35,7 @@ class IntroFragment : Fragment() {
         val args = IntroFragmentArgs.fromBundle(requireArguments())
         val coffeeId = args.coffeeId
         val coffeeName = args.coffeeName
+
 
 //        Toast.makeText(context, "$coffeeId  $coffeeName", Toast.LENGTH_SHORT).show()
 

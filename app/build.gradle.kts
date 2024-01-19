@@ -1,10 +1,6 @@
-
 plugins {
-
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-
-
     kotlin("kapt")
     id("androidx.navigation.safeargs.kotlin")
     id("com.google.dagger.hilt.android")
@@ -19,24 +15,89 @@ android {
         minSdk = 21
         targetSdk = 33
         versionCode = 1
-        versionName = "1.0"
+        versionName = "1.0.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+//    signingConfigs {
+//        getByName("test"){
+//            keyAlias = "ATL_project"
+//            keyPassword = "ATL123"
+//            storePassword = "ATL123"
+//            storeFile = file("")
+//        }
+//
+//        getByName("prod"){
+//            keyAlias = ""
+//            keyPassword = ""
+//            storePassword = ""
+//            storeFile = file("")
+//        }
+//    }
+
+
+
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
+//            signingConfig = signingConfigs.getByName("prod")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
         }
+
+        debug {
+            isMinifyEnabled = false
+            versionNameSuffix = "-debug"
+//            signingConfig = signingConfigs.getByName("test")
+        }
     }
+
+    flavorDimensions += "environment"
+//    flavorDimensions += "type"
+//    flavorDimensions += "sdk"
+
+    productFlavors {
+        create("prod"){
+            versionNameSuffix = "-Prod"
+            dimension = "environment"
+
+        }
+
+        create("dev"){
+            versionNameSuffix = "-Dev"
+            applicationIdSuffix = ".dev"
+            dimension = "environment"
+        }
+
+//        create("free"){
+//            dimension = "type"
+//        }
+//
+//        create("paid"){
+//            dimension = "type"
+//        }
+//
+//
+//        create("min21SDK"){
+//            dimension = "sdk"
+//        }
+//
+//        create("min26SDK"){
+//            dimension = "sdk"
+//        }
+
+
+
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = "1.8"
     }
@@ -59,7 +120,7 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.6.1")
 
     // Material
-    implementation("com.google.android.material:material:1.10.0")
+    implementation("com.google.android.material:material:1.11.0")
 
     // ConstraintLayout
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
@@ -70,7 +131,7 @@ dependencies {
     implementation("androidx.navigation:navigation-ui-ktx:$navVersion")
 
     // Lifecycle
-    val lifecycleVersion = "2.6.2"
+    val lifecycleVersion = "2.7.0"
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion")
 
@@ -112,6 +173,10 @@ dependencies {
     // WorkManager
     val workVersion = "2.9.0"
     implementation("androidx.work:work-runtime-ktx:$workVersion")
+
+
+    implementation(project(":my-library"))
+//    implementation(project(":test-lib"))
 
     // Testing
     testImplementation("junit:junit:4.13.2")

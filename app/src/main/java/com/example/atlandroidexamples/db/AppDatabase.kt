@@ -14,7 +14,7 @@ import com.example.atlandroidexamples.db.entities.TextEntity
     entities = [PersonEntity::class, StudentEntity::class, TextEntity::class],
     version = 1
 )
-abstract class AppDatabase: RoomDatabase() {
+abstract class AppDatabase : RoomDatabase() {
 
     abstract fun getPersonDAO(): PersonDAO
 
