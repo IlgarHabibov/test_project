@@ -17,3 +17,6 @@ rootProject.name = "ATLAndroidExamples"
 include(":app")
 include(":test-lib")
 include(":my-library")
+include(":address")
+include(":teachers")
+include(":students")

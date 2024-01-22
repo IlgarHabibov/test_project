@@ -9,8 +9,11 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/address" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/my-library" />
+            <option value="$PROJECT_DIR$/students" />
+            <option value="$PROJECT_DIR$/teachers" />
             <option value="$PROJECT_DIR$/test-lib" />
           </set>
         </option>

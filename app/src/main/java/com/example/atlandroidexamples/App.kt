@@ -7,7 +7,6 @@ import android.content.Context
 import android.os.Build
 import android.util.Log
 import com.example.atlandroidexamples.utils.Constants
-import com.example.test_lib.LibraryTest
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
@@ -16,10 +15,11 @@ class App: Application() {
 
     override fun onCreate() {
 
-        val test = LibraryTest()
-        
+//        val test = MyTestClass()
+//
+//
+//        Log.d("ApplicationTAG", "url = ${test.name}")
 
-        Log.d("ApplicationTAG", "url = ${test.name}")
         super.onCreate()
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
             val channel = NotificationChannel(

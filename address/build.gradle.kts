@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.test_lib"
+    namespace = "com.example.address"
     compileSdk = 34
 
     defaultConfig {

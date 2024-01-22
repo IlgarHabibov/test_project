@@ -56,38 +56,17 @@ android {
     }
 
     flavorDimensions += "environment"
-//    flavorDimensions += "type"
-//    flavorDimensions += "sdk"
 
     productFlavors {
         create("prod"){
-            versionNameSuffix = "-Prod"
             dimension = "environment"
 
         }
 
         create("dev"){
-            versionNameSuffix = "-Dev"
-            applicationIdSuffix = ".dev"
             dimension = "environment"
         }
 
-//        create("free"){
-//            dimension = "type"
-//        }
-//
-//        create("paid"){
-//            dimension = "type"
-//        }
-//
-//
-//        create("min21SDK"){
-//            dimension = "sdk"
-//        }
-//
-//        create("min26SDK"){
-//            dimension = "sdk"
-//        }
 
 
 
@@ -112,6 +91,10 @@ kapt {
 }
 
 dependencies {
+
+
+    implementation(project(":teachers"))
+    implementation(project(":students"))
 
     // Core ktx
     implementation("androidx.core:core-ktx:1.12.0")

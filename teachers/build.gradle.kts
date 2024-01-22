@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.test_lib"
+    namespace = "com.example.teachers"
     compileSdk = 34
 
     defaultConfig {
@@ -33,6 +33,8 @@ android {
 }
 
 dependencies {
+
+    api(project(":address"))
 
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")

@@ -28,15 +28,17 @@
         android:theme="@style/Base.Theme.ATLAndroidExamples"
         tools:targetApi="31">
         <activity
-            android:name=".lessons.lesson36.DownloadActivity"
+            android:name=".lessons.lesson39.CustomViewActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
+        <activity
+            android:name=".lessons.lesson36.DownloadActivity"
+            android:exported="false"/>
 
         <receiver
             android:name=".lessons.lesson34.TestReceiver"
@@ -67,11 +69,13 @@
         <activity
             android:name=".lessons.lesson35.WorkActivity"
             android:exported="true">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity
             android:name=".lessons.lesson33.PlayerActivity"
