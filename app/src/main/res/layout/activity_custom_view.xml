@@ -20,8 +20,7 @@
         app:itemSize="6dp"
         app:itemPadding="8dp"
         app:activeDrawable="@drawable/ic_indicator_active"
-        app:deActiveDrawable="@drawable/ic_indicator_deactive"
-        />
+        app:deActiveDrawable="@drawable/ic_indicator_deactive" />
 
 
     <Button
