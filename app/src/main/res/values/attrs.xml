@@ -8,6 +8,13 @@
         <attr name="currentStep" format="integer"/>
         <attr name="itemSize" format="dimension"/>
         <attr name="itemPadding" format="dimension"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="Banner">
+        <attr name="titleText" format="string"/>
+        <attr name="titleSize" format="dimension"/>
+        <attr name="titleTextColor" format="color"/>
 
     </declare-styleable>
 

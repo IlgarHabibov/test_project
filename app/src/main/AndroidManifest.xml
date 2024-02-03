@@ -27,24 +27,22 @@
         android:supportsRtl="true"
         android:theme="@style/Base.Theme.ATLAndroidExamples"
         tools:targetApi="31">
-        <activity
-            android:name=".lessons.lesson40.AnimationActivity"
-            android:exported="true" >
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-        </activity>
         <activity
-            android:name=".lessons.lesson39.CustomViewActivity"
-            android:exported="true">
+            android:name=".lessons.lesson41.MotionActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".lessons.lesson40.AnimationActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".lessons.lesson39.CustomViewActivity"
+            android:exported="false"/>
         <activity
             android:name=".lessons.lesson36.DownloadActivity"
             android:exported="false" />
