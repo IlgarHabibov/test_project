@@ -6,4 +6,5 @@ class GitTest {
     val b: String = ""
     val f: String = ""
 
+    val e: String = ""
 }
