@@ -15,7 +15,7 @@ class App: Application() {
 
     override fun onCreate() {
 
-//        val test = MyTestClass()
+        val test = MyTestClass()
 //
 //
 //        Log.d("ApplicationTAG", "url = ${test.name}")
