@@ -21,5 +21,9 @@ class Step2Fragment : Fragment() {
         return binding.root
     }
 
+    fun test(){
+
+    }
+
 
 }

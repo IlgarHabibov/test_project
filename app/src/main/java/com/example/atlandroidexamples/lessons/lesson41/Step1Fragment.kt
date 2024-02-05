@@ -95,6 +95,7 @@ class Step1Fragment : Fragment() {
         }
 
 
+        Log.d("ASDASDASdasd", "onViewCreated: ")
 
 //        parentFragmentManager.beginTransaction()
 //            .setCustomAnimations(
