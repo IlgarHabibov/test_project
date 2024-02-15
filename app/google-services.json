@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "427536839452",
+    "project_id": "atlandroidexamples",
+    "storage_bucket": "atlandroidexamples.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:427536839452:android:20554f5dc6a37f27b0c0d9",
+        "android_client_info": {
+          "package_name": "com.example.atlandroidexamples"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChG75XvlwSHkNAZF3ec_2DHisqE56KZTg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

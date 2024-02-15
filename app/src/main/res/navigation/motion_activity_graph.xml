@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/motion_activity_graph"
-    app:startDestination="@id/step1Fragment">
+    app:startDestination="@id/step2Fragment">
 
     <fragment
         android:id="@+id/step1Fragment"

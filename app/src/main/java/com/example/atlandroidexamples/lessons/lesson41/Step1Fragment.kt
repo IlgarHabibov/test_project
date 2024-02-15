@@ -13,6 +13,18 @@ import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import com.example.atlandroidexamples.R
 import com.example.atlandroidexamples.databinding.FragmentStep1Binding
+import com.google.firebase.FirebaseException
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.PhoneAuthCredential
+import com.google.firebase.auth.PhoneAuthOptions
+import com.google.firebase.auth.PhoneAuthProvider
+import com.google.firebase.remoteconfig.ConfigUpdate
+import com.google.firebase.remoteconfig.ConfigUpdateListener
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig
+import com.google.firebase.remoteconfig.FirebaseRemoteConfigException
+import com.google.firebase.remoteconfig.get
+import java.lang.RuntimeException
+import java.util.concurrent.TimeUnit
 
 
 class Step1Fragment : Fragment() {
@@ -33,6 +45,45 @@ class Step1Fragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
+
+
+
+//        FirebaseRemoteConfig.getInstance().addOnConfigUpdateListener(object: ConfigUpdateListener{
+//            override fun onUpdate(configUpdate: ConfigUpdate) {
+//                Log.d("FirebaseConfig", "onUpdate: ${configUpdate.updatedKeys}")
+//                val buttonShow = FirebaseRemoteConfig.getInstance().getBoolean("buttonShow")
+//                val message = FirebaseRemoteConfig.getInstance()["message"]
+//                Log.d("FirebaseConfig", "buttonShow: $buttonShow   message: $message")
+//            }
+//
+//            override fun onError(error: FirebaseRemoteConfigException) {
+//
+//            }
+//
+//        })
+
+
+        val callback = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks(){
+            override fun onVerificationCompleted(p0: PhoneAuthCredential) {
+                Log.d("FirebaseConfig", "onVerificationCompleted: ${p0.smsCode}")
+            }
+
+            override fun onVerificationFailed(p0: FirebaseException) {
+                Log.d("FirebaseConfig", "onVerificationCompleted: ${p0.message}")
+
+            }
+
+        }
+
+        binding.buttonNext.setOnClickListener {
+            val auth = FirebaseAuth.getInstance()
+            val  options = PhoneAuthOptions.Builder(auth)
+                .setPhoneNumber("+994508766516")
+                .setTimeout(60L, TimeUnit.SECONDS)
+                .setCallbacks(callback)
+                .build()
+            PhoneAuthProvider.verifyPhoneNumber(options)
+        }
 
 
         binding.motionLayout.setTransitionListener(
@@ -84,15 +135,18 @@ class Step1Fragment : Fragment() {
             .setPopExitAnim(R.anim.pop_out)
             .build()
 
-        binding.buttonNext.setOnClickListener {
-            findNavController().navigate(
-                Step1FragmentDirections.actionStep1FragmentToStep2Fragment(),
-                navOptions
-            )
-//            findNavController().navigate(
-//                Step1FragmentDirections.actionStep1FragmentToStep2Fragment()
-//            )
-        }
+//        binding.buttonNext.setOnClickListener {
+//
+//            throw RuntimeException("My Test crash")
+//
+////            findNavController().navigate(
+////                Step1FragmentDirections.actionStep1FragmentToStep2Fragment(),
+////                navOptions
+////            )
+////            findNavController().navigate(
+////                Step1FragmentDirections.actionStep1FragmentToStep2Fragment()
+////            )
+//        }
 
 
         Log.d("ASDASDASdasd", "onViewCreated: ")

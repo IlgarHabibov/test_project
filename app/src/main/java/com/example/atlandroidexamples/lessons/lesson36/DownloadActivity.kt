@@ -48,7 +48,6 @@ class DownloadActivity : AppCompatActivity() {
             downloadFile()
         }
 
-
     }
 
 

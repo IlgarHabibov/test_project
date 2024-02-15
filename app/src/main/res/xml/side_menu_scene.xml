@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+<!--    <Transition-->
+<!--        motion:constraintSetEnd="@+id/end"-->
+<!--        motion:constraintSetStart="@+id/start"-->
+<!--        motion:duration="2000">-->
+
+<!--&lt;!&ndash;        <OnSwipe motion:targetId="@id/motionContainer"&ndash;&gt;-->
+<!--&lt;!&ndash;            motion:dragDirection="dragRight"&ndash;&gt;-->
+<!--&lt;!&ndash;            motion:touchAnchorSide="right"/>&ndash;&gt;-->
+
+<!--        <OnClick motion:targetId="@id/menuButton"-->
+<!--            motion:clickAction="toggle"/>-->
+
+<!--    </Transition>-->
+
+<!--    <ConstraintSet android:id="@+id/start">-->
+
+<!--        <Constraint android:id="@id/menuList">-->
+<!--            <Layout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                motion:layout_constraintBottom_toBottomOf="parent"-->
+<!--                motion:layout_constraintEnd_toStartOf="parent"-->
+<!--                motion:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        </Constraint>-->
+
+<!--        <Constraint android:id="@id/motionContainer">-->
+<!--            <Layout-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="0dp"-->
+<!--                motion:layout_constraintBottom_toBottomOf="parent"-->
+<!--                motion:layout_constraintStart_toStartOf="parent"-->
+<!--                motion:layout_constraintEnd_toEndOf="parent"-->
+<!--                motion:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        </Constraint>-->
+
+<!--        <Constraint android:id="@id/menuButton">-->
+<!--            <Layout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                motion:layout_constraintStart_toStartOf="parent"-->
+<!--                motion:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        </Constraint>-->
+
+
+
+
+<!--    </ConstraintSet>-->
+
+<!--    <ConstraintSet-->
+<!--        android:id="@+id/end"-->
+<!--        motion:deriveConstraintsFrom="@id/start"-->
+<!--        >-->
+<!--        <Constraint android:id="@id/menuList">-->
+<!--            <Layout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                motion:layout_constraintBottom_toBottomOf="parent"-->
+<!--                motion:layout_constraintStart_toStartOf="parent"-->
+<!--                motion:layout_constraintEnd_toStartOf="@id/motionContainer"-->
+<!--                motion:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        </Constraint>-->
+
+<!--        <Constraint android:id="@id/motionContainer">-->
+<!--            <Layout-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="0dp"-->
+<!--                motion:layout_constraintBottom_toBottomOf="parent"-->
+<!--                motion:layout_constraintStart_toStartOf="parent"-->
+<!--                motion:layout_constraintEnd_toEndOf="parent"-->
+<!--                motion:layout_constraintTop_toTopOf="parent"-->
+<!--                android:layout_marginLeft="180dp"-->
+<!--                android:scaleY="0.7"-->
+<!--                android:scaleX="0.7"/>-->
+
+<!--        </Constraint>-->
+
+
+<!--        <Constraint android:id="@id/menuButton">-->
+<!--            <Layout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                motion:layout_constraintStart_toStartOf="parent"-->
+<!--                motion:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        </Constraint>-->
+
+<!--    </ConstraintSet>-->
+
+</MotionScene>

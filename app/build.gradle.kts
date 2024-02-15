@@ -4,6 +4,8 @@ plugins {
     kotlin("kapt")
     id("androidx.navigation.safeargs.kotlin")
     id("com.google.dagger.hilt.android")
+    id("com.google.gms.google-services")
+    id("com.google.firebase.crashlytics")
 }
 
 android {
@@ -20,28 +22,28 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
-//    signingConfigs {
-//        getByName("test"){
-//            keyAlias = "ATL_project"
-//            keyPassword = "ATL123"
-//            storePassword = "ATL123"
-//            storeFile = file("")
+    signingConfigs {
+        getByName("debug"){
+            keyAlias = "atl"
+            keyPassword = "atl1234"
+            storePassword = "atl1234"
+            storeFile = file("atl_new.keystore")
+        }
+
+//        getByName("release"){
+//            keyAlias = "atl"
+//            keyPassword = "atl1234"
+//            storePassword = "atl1234"
+//            storeFile = file("/atl_new.keystore")
 //        }
-//
-//        getByName("prod"){
-//            keyAlias = ""
-//            keyPassword = ""
-//            storePassword = ""
-//            storeFile = file("")
-//        }
-//    }
+    }
 
 
 
     buildTypes {
         release {
             isMinifyEnabled = true
-//            signingConfig = signingConfigs.getByName("prod")
+            signingConfig = signingConfigs.getByName("debug")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -50,27 +52,27 @@ android {
 
         debug {
             isMinifyEnabled = false
-            versionNameSuffix = "-debug"
-//            signingConfig = signingConfigs.getByName("test")
+//            versionNameSuffix = "-debug"
+            signingConfig = signingConfigs.getByName("debug")
         }
     }
 
     flavorDimensions += "environment"
 
-    productFlavors {
-        create("prod"){
-            dimension = "environment"
-
-        }
-
-        create("dev"){
-            dimension = "environment"
-        }
-
-
-
-
-    }
+//    productFlavors {
+//        create("prod"){
+//            dimension = "environment"
+//
+//        }
+//
+//        create("dev"){
+//            dimension = "environment"
+//        }
+//
+//
+//
+//
+//    }
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -107,6 +109,17 @@ dependencies {
 
     // ConstraintLayout
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+
+    // Firebase
+    implementation(platform("com.google.firebase:firebase-bom:32.7.2"))
+    implementation("com.google.firebase:firebase-crashlytics:18.6.2")
+    implementation("com.google.firebase:firebase-config:21.6.1")
+    implementation("com.google.firebase:firebase-auth")
+    implementation("com.google.firebase:firebase-firestore:24.10.2")
+    implementation("com.google.firebase:firebase-appcheck-ktx:17.1.2")
+    implementation("com.google.firebase:firebase-appcheck-playintegrity:17.1.2")
+    implementation("com.google.firebase:firebase-messaging:23.4.1")
+    implementation("com.google.firebase:firebase-storage:20.3.0")
 
     // Navigation
     val navVersion = "2.7.4"

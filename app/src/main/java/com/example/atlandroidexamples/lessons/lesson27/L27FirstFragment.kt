@@ -64,10 +64,10 @@ class L27FirstFragment() : Fragment() {
 
 }
 
-fun <T> Fragment.collectFlow(flow: Flow<T>, collect :(T) -> Unit){
+fun <T> Fragment.collectFlow(flow: Flow<T>, collect: (T) -> Unit) {
     lifecycleScope.launch {
-        viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED){
-            flow.collect{
+        repeatOnLifecycle(Lifecycle.State.STARTED) {
+            flow.collect {
                 collect.invoke(it)
             }
         }

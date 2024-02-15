@@ -1,12 +1,12 @@
 package com.example.atlandroidexamples.lessons.lesson28
 
 import android.content.Context
-import com.example.atlandroidexamples.RetrofitConstants
+//import com.example.atlandroidexamples.RetrofitConstants
 import com.example.atlandroidexamples.lessons.lesson27.AlbumRepository
 import com.example.atlandroidexamples.lessons.lesson27.L27Repository
 import com.example.atlandroidexamples.lessons.lesson27.NetworkHelper
-import com.example.atlandroidexamples.lessons.practice14.AServiceClient
-import com.example.atlandroidexamples.lessons.practice14.BServiceClient
+import com.example.atlandroidexamples.practices.practice14.AServiceClient
+import com.example.atlandroidexamples.practices.practice14.BServiceClient
 import com.example.atlandroidexamples.network.ApiService
 import com.example.atlandroidexamples.network.AuthApiService
 import dagger.Module
@@ -34,7 +34,7 @@ object NetworkModule {
         okHttpClient: OkHttpClient
     ): Retrofit{
         return Retrofit.Builder()
-            .baseUrl(RetrofitConstants.BASE_URL)
+            .baseUrl("RetrofitConstants.BASE_URL")
             .addConverterFactory(gsonConverterFactory)
             .client(okHttpClient)
             .build()

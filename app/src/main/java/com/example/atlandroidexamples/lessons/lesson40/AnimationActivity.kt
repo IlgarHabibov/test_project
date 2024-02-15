@@ -41,12 +41,10 @@ class AnimationActivity : AppCompatActivity() {
 
         binding.parentComponent.setOnClickListener {
             expandDesc()
-            Toast.makeText(this, "clicked", Toast.LENGTH_SHORT).show()
         }
     }
 
     private fun expandDesc() {
-
         isVisible = !isVisible
         val autoTransition = AutoTransition()
         autoTransition.duration = 500

@@ -28,8 +28,21 @@ class AlbumsFragment : Fragment() {
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+
+
+
+
+
+
+
+
+
+
+
+    override fun onViewCreated(
+        view: View,
+        savedInstanceState: Bundle?
+    ) {
 
         with(binding){
             albumsRecyclerView.adapter = adapter
@@ -38,22 +51,40 @@ class AlbumsFragment : Fragment() {
             }
         }
 
-        viewModel.data.observe(viewLifecycleOwner, ::onStateChange)
+        viewModel.data.observe(
+            viewLifecycleOwner,
+            ::onStateChange
+        )
     }
+
+
+
+
+
+
+
+
+
 
     private fun onStateChange(state: AlbumsState){
         when(state){
             is AlbumsState.Success -> {
-                binding.albumsProgress.isVisible = false
-                state.albumsList?.let { adapter.updateData(it) }
+                showLoading(false)
+                state.albumsList?.let {
+                    adapter.updateData(it)
+                }
             }
             is AlbumsState.Error ->{
-                binding.albumsProgress.isVisible = false
-                Toast.makeText(requireContext(), "${state.message}", Toast.LENGTH_SHORT).show()
+                showLoading(false)
             }
-            is AlbumsState.Loading -> binding.albumsProgress.isVisible = true
-            else -> {}
+            is AlbumsState.Loading -> showLoading(false)
+
         }
+    }
+
+
+    fun showLoading(isLoading: Boolean){
+        binding.albumsProgress.isVisible = false
     }
 
 }

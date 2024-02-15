@@ -5,6 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
 
 
+    android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -23,6 +24,7 @@
 
 
     <androidx.constraintlayout.motion.widget.MotionLayout
+        android:visibility="gone"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layoutDescription="@xml/motion_scene_1"
@@ -38,7 +40,6 @@
             android:background="?attr/colorAccent"
             android:layout_width="64dp"
             android:layout_height="64dp"
-            android:transitionName="rectangle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
