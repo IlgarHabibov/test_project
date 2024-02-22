@@ -23,6 +23,7 @@ class NotesVM @Inject constructor(
     fun getNotes() {
         _state.value = UiState.Loading(true)
 
+
         notesRepository.getNotes {
             when(it){
                 is Result.Success ->{
