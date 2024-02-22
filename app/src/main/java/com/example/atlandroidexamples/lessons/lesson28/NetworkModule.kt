@@ -9,6 +9,9 @@ import com.example.atlandroidexamples.practices.practice14.AServiceClient
 import com.example.atlandroidexamples.practices.practice14.BServiceClient
 import com.example.atlandroidexamples.network.ApiService
 import com.example.atlandroidexamples.network.AuthApiService
+import com.example.atlandroidexamples.practices.practice21.notes.repository.NotesRepository
+import com.example.atlandroidexamples.practices.practice21.notes.repository.NotesRepositoryImpl
+import com.google.firebase.firestore.FirebaseFirestore
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -77,6 +80,12 @@ object NetworkModule {
     @Provides
     fun provideAlbumRepository(apiService: ApiService): AlbumRepository {
         return AlbumRepository(apiService)
+    }
+
+
+    @Provides
+    fun provideAlbumRepository(firestore: FirebaseFirestore): NotesRepository {
+        return NotesRepositoryImpl(firestore)
     }
 
 
